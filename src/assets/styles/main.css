@@ -1,0 +1,236 @@
+:root {
+  --primary-color: #b89a3f;
+  --primary-hover: #9d8335;
+  --secondary-color: #1e2026;
+  --bg-dark: #14161a;
+  --bg-card: #1a1d23;
+  --text-primary: #d4d7dc;
+  --text-secondary: #6b7280;
+  --success: #4ade80;
+  --danger: #f87171;
+  --border-color: #2d3238;
+  --shadow-soft: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Удален неиспользуемый keyframe shimmer */
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Удален неиспользуемый класс slide-in в компонентах */
+
+/* Кастомные стили для Bootstrap */
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.card * {
+  color: inherit;
+}
+
+.card .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+}
+
+.form-control {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control:focus {
+  background: var(--bg-card);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.2rem rgba(184, 154, 63, 0.15);
+}
+
+.table {
+  color: var(--text-primary);
+}
+
+.table-dark {
+  --bs-table-bg: var(--bg-card);
+  --bs-table-border-color: var(--border-color);
+}
+
+/* Градиенты */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* Утилиты */
+.text-success-custom {
+  color: var(--success) !important;
+}
+
+.text-danger-custom {
+  color: var(--danger) !important;
+}
+
+.bg-card {
+  background: var(--bg-card);
+}
+
+.border-custom {
+  border-color: var(--border-color) !important;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 70px;
+  }
+
+  .display-3, .display-4, .display-5 {
+    font-size: 2rem !important;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem 0.25rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    padding-top: 60px;
+  }
+
+  .display-3, .display-4, .display-5 {
+    font-size: 1.75rem !important;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .card-header {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.4rem 0.2rem;
+  }
+}
+
